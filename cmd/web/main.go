@@ -21,6 +21,7 @@ func initServer() {
 		Views: engine,
 	})
 
+	//Middlewares
 	app.Use(recover.New())
 	app.Use(compress.New(compress.Config{
 		Level: compress.LevelBestSpeed,
@@ -32,6 +33,7 @@ func initServer() {
 		Format: "[${ip}]:${port} ${status} - ${method} ${path}\n",
 	}))
 
+	// Serve static files
 	app.Static("/static", "./static")
 
 	homeContr := controllers.HomeController{}
