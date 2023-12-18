@@ -1,2 +1,4 @@
 bin/
 views/node_modules/
+hacker_news.db
+.env
